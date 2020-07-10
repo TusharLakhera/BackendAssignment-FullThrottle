@@ -1,3 +1,3 @@
-release: python manage.py makemigrations --no-input
-release: python manage.py migrate --no-input
-web: gunicorn UserBackend.wsgi --log-file -
+release: python manage.py makemigrations 
+release: python manage.py migrate
+web: gunicorn FullThrottleLabs.wsgi

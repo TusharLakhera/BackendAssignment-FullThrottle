@@ -26,7 +26,7 @@ SECRET_KEY = 'x&tj$@faxupx04y_kig!ewqyyv^n!todtcze*hpyo-e)6(8kxk'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['UserBackend.herokuapp.com','127.0.0.1']
 
 
 # Application definition
@@ -120,6 +120,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
+
 STATIC_URL = '/static/'
+
+REST_FRAMEWORK = {
+
+    'DATETIME_FORMAT': "%b %d %Y  %I:%M%p",
+}
 
 django_heroku.settings(locals())
